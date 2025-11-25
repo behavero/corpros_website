@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CORPROS GROUP Website
+
+A high-performance, ultra-premium corporate website built with Next.js 14+ and following the "Dark Architectural Luxury" design aesthetic.
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Animation**: Framer Motion
+- **Backend**: Firebase (Firestore)
+- **Icons**: Lucide React
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+- Firebase project (for contact form)
+
+### Installation
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Set up Firebase:
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+   - Enable Firestore Database
+   - Create a `.env.local` file in the root directory with your Firebase credentials:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key_here
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Add your assets:
+   - Place logos in `public/logos/`
+   - Place images in `public/images/`
+   - Place videos in `public/videos/`
+   - See `public/README_ASSETS.md` for details
 
-## Learn More
+4. Run the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+corpros-web/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx           # Homepage
+│   ├── profils/           # Nos Profils page
+│   ├── methode/          # Notre Méthode page
+│   ├── vision/           # Notre Vision page
+│   ├── contact/          # Contact page with form
+│   ├── layout.tsx        # Root layout
+│   └── globals.css       # Global styles
+├── components/            # Reusable components
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── Button.tsx
+│   ├── Input.tsx
+│   └── ...
+├── lib/                   # Utilities
+│   ├── firebase.ts       # Firebase configuration
+│   └── utils.ts          # Helper functions
+└── public/               # Static assets
+    ├── images/
+    ├── videos/
+    └── logos/
+```
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The website follows the design specifications in `design.json`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Colors**: Dark backgrounds (#262626), Gold accents (#C6A55C), Hairline dividers
+- **Typography**: Libre Baskerville (serif) for headings, Poppins (sans) for body
+- **Spacing**: 120px section gaps, 24px component gaps
+- **Atmosphere**: Noise texture overlay, cinematic animations
+
+## Features
+
+- ✅ Responsive design (mobile-first)
+- ✅ Dark mode only
+- ✅ Smooth animations with Framer Motion
+- ✅ Contact form with conditional fields
+- ✅ Firebase Firestore integration
+- ✅ SEO optimized
+- ✅ Accessible navigation
+
+## Firebase Setup
+
+1. Create a Firestore database in your Firebase project
+2. The contact form automatically saves submissions to a `leads` collection
+3. No security rules are required for basic functionality (consider adding rules for production)
+
+## Building for Production
+
+```bash
+npm run build
+npm start
+```
+
+## Customization
+
+### Updating Content
+
+- Edit page components in `app/` directory
+- Update navigation links in `components/Header.tsx`
+- Modify footer content in `components/Footer.tsx`
+
+### Styling
+
+- Global styles: `app/globals.css`
+- Component styles: Tailwind classes in component files
+- Design tokens: Defined in `globals.css` CSS variables
+
+### Adding Assets
+
+See `public/README_ASSETS.md` for guidelines on adding images, videos, and logos.
+
+## License
+
+© 2024 CORPROS GROUP
