@@ -160,12 +160,6 @@ export default function ContactPage() {
             contact.
           </motion.h1>
 
-          {/* FAQ Section */}
-          <div className="mb-32">
-            <h2 className="text-3xl md:text-4xl font-display mb-12 text-center">Questions fréquentes</h2>
-            <FAQAccordion />
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             {/* Left: Contact Info */}
             <motion.div
@@ -324,6 +318,12 @@ export default function ContactPage() {
                 </form>
               )}
             </motion.div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mt-32">
+            <h2 className="text-3xl md:text-4xl font-display mb-12 text-center">Questions fréquentes</h2>
+            <FAQAccordion />
           </div>
         </div>
       </div>
