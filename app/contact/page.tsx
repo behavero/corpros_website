@@ -157,7 +157,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-massive mb-24"
           >
-            contact.
+            Contactez-nous.
           </motion.h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">

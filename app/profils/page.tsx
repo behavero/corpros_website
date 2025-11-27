@@ -20,9 +20,9 @@ const profiles = {
     id: 'croissance',
     title: 'Profil Croissance',
     subtitle: '1-3 ans',
-    description: 'Booster votre développement commercial et renforcer vos marges.',
+    description: 'Accélérer votre croissance et renforcer vos marges.',
     focus: [
-      { title: 'Commercial', content: 'Accélération de votre développement commercial et optimisation de votre pipeline.' },
+      { title: 'Commercial', content: 'Structuration de votre force de vente et optimisation de votre pipeline commercial.' },
       { title: 'Marges', content: 'Amélioration de votre rentabilité et optimisation de votre structure de coûts.' },
       { title: 'Organisation & RH', content: 'Renforcement de votre équipe et structuration de votre organisation.' },
     ],
@@ -85,7 +85,7 @@ export default function ProfilsPage() {
                 <div className="text-2xl font-display mb-3">{profile.title}</div>
                 <div className="text-label">{profile.subtitle}</div>
               </div>
-              {activeTab === profile.id && <div className="w-2 h-2 rounded-full bg-[#22C55E]" />}
+              {activeTab === profile.id && <div className="w-2 h-2 rounded-full bg-[#EFBF04]" />}
             </div>
           </button>
         ))}
@@ -98,8 +98,9 @@ export default function ProfilsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-4xl"
+        className="max-w-4xl border-l-2 border-[#EFBF04] pl-12 py-8 bg-white/5"
       >
+        <div className="text-label mb-4 text-[#EFBF04]">{activeProfile.subtitle}</div>
         <h2 className="text-4xl md:text-5xl font-display mb-10">{activeProfile.title}</h2>
         <p className="text-body text-xl mb-20 leading-relaxed">{activeProfile.description}</p>
 

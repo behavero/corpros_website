@@ -38,24 +38,24 @@ export default function Home() {
       <section className="container-custom py-40 border-b border-white/15">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           <motion.div {...fadeIn} transition={{ delay: 0.1 }}>
-            <div className="text-6xl md:text-7xl font-display font-light mb-6">
+            <div className="text-5xl md:text-6xl font-display font-light mb-6 text-[#EFBF04]">
               <AnimatedCounter end={150} suffix="+" duration={2500} />
             </div>
-            <div className="text-label group-hover:text-[#EFBF04] transition-colors">PROJETS ACCOMPAGNÉS</div>
+            <div className="text-label">PROJETS ACCOMPAGNÉS</div>
           </motion.div>
           
           <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="md:border-l md:border-white/15 md:pl-16">
-            <div className="text-6xl md:text-7xl font-display font-light mb-6">
+            <div className="text-5xl md:text-6xl font-display font-light mb-6 text-[#EFBF04]">
               <AnimatedCounter end={100} suffix="+" duration={2500} />
             </div>
-            <div className="text-label group-hover:text-[#EFBF04] transition-colors">ENTREPRISES ACTIVES</div>
+            <div className="text-label">ENTREPRISES ACTIVES</div>
           </motion.div>
           
           <motion.div {...fadeIn} transition={{ delay: 0.3 }} className="md:border-l md:border-white/15 md:pl-16">
-            <div className="text-6xl md:text-7xl font-display font-light mb-6">
+            <div className="text-5xl md:text-6xl font-display font-light mb-6 text-[#EFBF04]">
               <AnimatedCounter end={90} suffix="%" duration={2500} />
             </div>
-            <div className="text-label group-hover:text-[#EFBF04] transition-colors">TAUX DE RÉUSSITE</div>
+            <div className="text-label">TAUX DE RÉUSSITE</div>
           </motion.div>
         </div>
       </section>

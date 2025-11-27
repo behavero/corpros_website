@@ -3,35 +3,32 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { CheckCircle2 } from 'lucide-react';
+import FAQAccordion from '@/components/FAQAccordion';
 
 const steps = [
   { 
     number: '01', 
     title: 'Analyse complète de l\'entreprise', 
     description: 'Audit approfondi de votre situation actuelle, de vos forces et de vos axes d\'amélioration.',
-    duration: '2-3 semaines',
-    deliverable: 'Rapport d\'audit détaillé'
+    duration: '2-3 semaines'
   },
   { 
     number: '02', 
     title: 'Diagnostic stratégique et plan d\'action', 
     description: 'Élaboration d\'une feuille de route personnalisée avec objectifs mesurables et jalons clairs.',
-    duration: '1-2 semaines',
-    deliverable: 'Plan stratégique personnalisé'
+    duration: '1-2 semaines'
   },
   { 
     number: '03', 
     title: 'Mise en œuvre opérationnelle', 
     description: 'Accompagnement dans l\'exécution avec suivi régulier et ajustements en temps réel.',
-    duration: '3-12 mois',
-    deliverable: 'Suivi hebdomadaire & dashboards'
+    duration: '3-12 mois'
   },
   { 
     number: '04', 
     title: 'Rémunération sur résultats', 
     description: 'Notre rémunération est directement liée à vos résultats. Nous gagnons ensemble.',
-    duration: 'Continue',
-    deliverable: 'Performance partagée'
+    duration: 'Continue'
   },
 ];
 
@@ -100,10 +97,6 @@ function RoadmapStep({ step, index, isLast }: { step: typeof steps[0]; index: nu
                 <div className="text-label mb-1">DURÉE</div>
                 <div className="text-sm text-white">{step.duration}</div>
               </div>
-              <div>
-                <div className="text-label mb-1">LIVRABLE</div>
-                <div className="text-sm text-white">{step.deliverable}</div>
-              </div>
             </div>
           </motion.div>
         </div>
@@ -120,7 +113,7 @@ export default function MethodePage() {
         animate={{ opacity: 1, y: 0 }}
         className="text-massive mb-20"
       >
-        notre méthode.
+        Notre Méthode.
       </motion.h1>
 
       <motion.p
@@ -143,6 +136,12 @@ export default function MethodePage() {
             isLast={index === steps.length - 1}
           />
         ))}
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mt-32 pt-32 border-t border-white/15">
+        <h2 className="text-3xl md:text-4xl font-display mb-12 text-center">Questions fréquentes</h2>
+        <FAQAccordion />
       </div>
     </div>
   );
