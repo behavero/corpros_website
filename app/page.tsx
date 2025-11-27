@@ -68,7 +68,7 @@ export default function Home() {
 
         <div className="space-y-0">
           {[
-            { index: '01', title: 'Aucun risque', description: 'Notre modèle de rémunération sur résultats garantit que nous sommes alignés avec votre succès.' },
+            { index: '01', title: 'Nous prenons notre part de responsabilités', description: 'Si nous ne délivrons pas, vous ne payez pas. C\'est aussi simple que ça.' },
             { index: '02', title: 'Aucun investissement initial', description: 'Pas de frais d\'entrée, pas d\'engagement financier. Nous investissons dans votre réussite.' },
             { index: '03', title: 'Uniquement de la performance', description: 'Nous ne gagnons que lorsque vous gagnez. C\'est notre engagement mutuel.' },
           ].map((service, i) => (
