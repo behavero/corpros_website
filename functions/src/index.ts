@@ -4,17 +4,8 @@ import * as nodemailer from 'nodemailer';
 
 admin.initializeApp();
 
-// Configuration email
+// Configuration email (constants)
 const EMAIL_TO = 'gtmt@outlook.fr';
-const EMAIL_FROM = process.env.EMAIL_FROM || 'noreply@corpros-ff144.firebaseapp.com';
-const SMTP_HOST = process.env.SMTP_HOST;
-const SMTP_PORT = process.env.SMTP_PORT || '587';
-const SMTP_USER = process.env.SMTP_USER;
-const SMTP_PASS = process.env.SMTP_PASS;
-
-// Configuration des webhooks (optionnel)
-const TEAMS_WEBHOOK_URL = process.env.TEAMS_WEBHOOK_URL;
-const TRELLO_WEBHOOK_URL = process.env.TRELLO_WEBHOOK_URL;
 
 interface LeadData {
   firstName: string;
@@ -41,6 +32,18 @@ export const onNewLead = functions.firestore
     const leadId = context.params.leadId;
     
     console.log(`📨 Nouveau lead reçu: ${lead.firstName} ${lead.lastName} (${lead.company})`);
+
+    // Load Firebase config at runtime
+    const config = functions.config();
+    const EMAIL_FROM = config.email?.from || 'noreply@corpros-ff144.firebaseapp.com';
+    const SMTP_HOST = config.smtp?.host;
+    const SMTP_PORT = config.smtp?.port || '587';
+    const SMTP_USER = config.smtp?.user;
+    const SMTP_PASS = config.smtp?.pass;
+    const TEAMS_WEBHOOK_URL = config.teams?.webhook;
+    const TRELLO_WEBHOOK_URL = config.trello?.webhook;
+
+    console.log(`🔧 Config chargée - SMTP User: ${SMTP_USER ? 'Configured' : 'Missing'}`);
 
     const promises: Promise<void>[] = [];
 
