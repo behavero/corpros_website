@@ -1,0 +1,22 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Leads collection - Allow public writes (form submissions)
+    match /leads/{leadId} {
+      // Allow anyone to create a lead (submit contact form)
+      allow create: if request.resource.data.keys().hasAll([
+        'firstName', 'lastName', 'company', 'email', 
+        'city', 'companySize', 'profile', 'message'
+      ]) 
+      && request.resource.data.email is string
+      && request.resource.data.email.matches('.+@.+[.].+');
+      
+      // Only authenticated admins can read/update/delete
+      // For now, deny all reads to public
+      allow read, update, delete: if false;
+    }
+  }
+}
+
