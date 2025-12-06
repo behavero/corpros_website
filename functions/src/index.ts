@@ -5,7 +5,7 @@ import * as nodemailer from 'nodemailer';
 admin.initializeApp();
 
 // Configuration email (constants)
-const EMAIL_TO = 'gtmt@outlook.fr';
+const EMAIL_TO = 'ffapartners@gmail.com';
 
 interface LeadData {
   firstName: string;
